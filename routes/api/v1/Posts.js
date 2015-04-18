@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 
 // GET /api/v1/posts/:post_id
 router.get('/:post_id', function(req, res) {
-    Post.findById(req.params.post_id, function(err, post) {
+    post.findById(req.params.post_id, function(err, post) {
         if (err) res.send(err);
 
         res.json(post);
@@ -37,7 +37,7 @@ router.post('/', function(req, res) {
 
 // PUT /api/v1/posts
 router.put('/', function(req, res) {
-    Post.findById(req.params.post_id, function(err, post) {
+    post.findById(req.params.post_id, function(err, post) {
         if (err) res.send(err);
 
         post.title = req.body.title;
@@ -58,7 +58,7 @@ router.put('/', function(req, res) {
 
 // DELETE /api/v1/posts/:post_id
 router.delete('/:post_id', function(req, res) { 
-    Post.findByIdAndRemove(req.params.post_id, function(err, post) {
+    post.findByIdAndRemove(req.params.post_id, function(err, post) {
         if (err) res.send(err);
 
         res.json({ message: 'Post deleted!' });

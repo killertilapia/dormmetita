@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var uriUtil = require('mongodb-uri');
 
 var connectToMongoLab = function () {
-    var username = process.env.MongolabUsername;
+    var username = process.env.MongoLabUsername;
     var password = process.env.MongoLabPassword;
 
     var mongolabUri = "mongodb://" + username + ":" + password + "@ds035448.mongolab.com:35448/dbhaxspace";

@@ -7,6 +7,11 @@ var PostSchema = new Schema({
     body: String,
     published: Boolean,
     date: { type: Date, default: Date.now },
+    geoloc: {
+        latitude: { type: Number, default: 0 },
+        longitude: { type: Number, default: 0 },
+        label: { type: String, default: ''} 
+    },
     meta: {
         uvotes: { type: Number, default: 0 },
         dvotes: { type: Number, default: 0 },
