@@ -14,7 +14,8 @@ var connectToMongoLab = function () {
     var username = process.env.MongoLabUsername;
     var password = process.env.MongoLabPassword;
 
-    var mongolabUri = "mongodb://" + username + ":" + password + "@ds035448.mongolab.com:35448/dbhaxspace";
+    //var mongolabUri = "mongodb://" + username + ":" + password + "@ds035448.mongolab.com:35448/dbhaxspace";
+    var mongolabUri = "mongodb://jaypax:version1@ds035448.mongolab.com:35448/dbhaxspace";
     var mongooseUri = uriUtil.formatMongoose(mongolabUri);
     var options = {
         server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
