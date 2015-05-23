@@ -1,9 +1,21 @@
 ﻿extends shared/layout
 
 block content
-    .container
-        .jumbotron
-            h1= title
-            p Welcome to #{title}
-            p
-                a(class='btn btn-lg btn-primary', href='#', role='button') Action &raquo;
+    div(id='content', ng-controller='MainCtrl as main')
+        div(id='canvas', data-role='content')
+            ui-gmap-google-map(center='main.mapData.center', zoom='main.mapData.zoom', option='main.mapOptions', id='map-canvas', bounds='main.mapData.bounds')
+                ui-gmap-markers(models='main.randomMarkers', coords='\'self\'', icon='\'icon\'')
+
+        div
+            p {{main.mapData.bounds}}
+            p {{main.randomMarkers}}
+
+        div(class='container-fluid', id='main')
+            div(class='row')
+                div(class='col-xs-8', id='left')
+                    div(class='panel panel-default')
+                        div(class='panel-heading')
+                            a(href='#') Item Heading
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.
+
+                div(class='col-xs-4')
